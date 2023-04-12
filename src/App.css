@@ -1,8 +1,17 @@
-.App {
+html, body {
+  height: 100%;
+}
+
+body {
   background-image: linear-gradient(#F0F8FF, #BDBDDE);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
   font-weight: 400;
   color: #7e93d8;
-  padding: 1% 2%;
+}
+
+.App {
+  padding: 5% 10%;
 }
 
 .Header {

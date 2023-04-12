@@ -1,8 +1,9 @@
 import React from "react";
+import "../App.css";
 
 const AddTodo = () => {
   return (
-    <div>
+    <div className="AddTodo">
       <label>Add to list</label>
       <form>
         <input className="Input" type="text" />
