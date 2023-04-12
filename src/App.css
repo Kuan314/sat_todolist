@@ -11,12 +11,14 @@ body {
 }
 
 .App {
-  padding: 5% 10%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 80%;
+  grid-template-rows: auto auto;
 }
 
-.Header {
-  display: flex;
-  flex-direction: column;
+.Info {
+
 }
 
 .Title {
@@ -27,10 +29,23 @@ body {
   font-weight: 200;
 }
 
-.Info {
-  margin: 1% auto;
+.TodoList {
+  margin: 1% 0;
   border-top: 2px #7e93d8 solid;
   border-bottom: 2px #7e93d8 solid;
+}
+
+.Tasks {
+  display: grid;
+  row-gap: 5px;
+}
+
+.Task {
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  border-left: 5px #7e93d8 solid;
+  padding: 2% 0;
 }
 
 .AddTodo {
@@ -39,8 +54,7 @@ body {
 }
 
 .Input {
-  width: 90%;
-  height: 3em;
+  padding-right: 5%;
 }
 
 .SubmitButton {
