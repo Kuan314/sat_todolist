@@ -36,16 +36,16 @@ body {
 }
 
 .Tasks {
-  display: grid;
-  row-gap: 5px;
 }
 
 .Task {
-  width: 100%;
   background-color: white;
   border-radius: 5px;
   border-left: 5px #7e93d8 solid;
-  padding: 2% 0;
+}
+
+.TaskDone {
+  text-decoration: line-through;
 }
 
 .AddTodo {
