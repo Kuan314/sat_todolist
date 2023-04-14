@@ -3,7 +3,7 @@ import "../App.css";
 import ProgressBar from "./ProgressBar";
 import TodoList from "./TodoList";
 
-const Info = ({data, handleTaskComplete}) => {
+const Info = ({data, handleTaskComplete, handleTaskDelete}) => {
 
   return (
     <>
@@ -18,7 +18,7 @@ const Info = ({data, handleTaskComplete}) => {
       </div>
       <div className="TodoList">
         <ProgressBar data={data}/>
-        <TodoList data={data} onTaskComplete={handleTaskComplete} />
+        <TodoList data={data} onTaskComplete={handleTaskComplete} onTaskDelete={handleTaskDelete} />
       </div>
     </div>
     </>

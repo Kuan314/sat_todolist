@@ -6,28 +6,34 @@ import { Data } from './Data';
 
 const App = () => {
 
-  const [data, setDatas] = useState(Data);
-
-  const handleTaskComplete = (index) => {
-    const updateDatas = [...data];
-    updateDatas[index] = {...updateDatas[index], status: !updateDatas[index].status};
-    setDatas(updateDatas);
-  };
+  const [data, setData] = useState(Data);
 
   const handleTaskAdd = (task) => {
-    const updateDatas = [...data,];
-    updateDatas.push(
+    const updatedData = [...data,];
+    updatedData.push(
       {
         task: task,
         status: false
       }
     )
-    setDatas(updateDatas);
+    setData(updatedData);
+  }
+
+  const handleTaskComplete = (index) => {
+    const updatedData = [...data];
+    updatedData[index] = {...updatedData[index], status: !updatedData[index].status};
+    setData(updatedData);
+  };
+
+  const handleTaskDelete = (index) => {
+    const updatedData = [...data];
+    updatedData.splice(index, 1);
+    setData(updatedData)
   }
 
   return (
     <div className="App">
-      <Info data={data} handleTaskComplete={handleTaskComplete} />
+      <Info data={data} handleTaskComplete={handleTaskComplete} handleTaskDelete={handleTaskDelete} />
       <AddTodo onTaskAdd={handleTaskAdd} />
     </div>
   );

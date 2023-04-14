@@ -57,6 +57,9 @@ body {
   background-color: white;
   border-radius: 5px;
   border-left: 5px #7e93d8 solid;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .TaskDone {
