@@ -8,10 +8,11 @@ const TodoList = ({data, onTaskComplete}) => {
   }
 
   return (
-    <FormGroup className="Tasks">
+    <FormGroup className="Tasks" sx={{ flexWrap: "nowrap", overflowY: "scroll" }}>
       {data.map((data, index) => {
         return (
-          <FormControlLabel className = {`Task ${data.status ? "TaskDone" : ""}`} label = {data.task} sx = {{ margin: "5px 0" }} 
+          <FormControlLabel className = {`Task ${data.status ? "TaskDone" : ""}`} label = {data.task}
+            sx = {{ margin: "5px 0" }} 
             control = {
               <Checkbox 
                 checked = {data.status}

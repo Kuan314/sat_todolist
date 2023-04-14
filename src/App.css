@@ -26,15 +26,15 @@ body {
 }
 
 .ShowProgress {
-  margin: 1% 0;
-  display: grid;
-  grid-template-columns: 5% 94%;
-  gap: 1%;
+  margin: 2% 0;
+  display: flex;
 }
 
 .ProgressBar {
   background-color: #ffffff;
   border-radius: 25px;
+  width: 100%;
+  margin-left: 1%;
 }
 
 .DoneProgress {
@@ -47,6 +47,10 @@ body {
   margin: 1% 0;
   border-top: 2px #7e93d8 solid;
   border-bottom: 2px #7e93d8 solid;
+}
+
+.Tasks {
+  height: 300px;
 }
 
 .Task {
