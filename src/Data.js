@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export const Data = [
   {
     "task": "Eat",

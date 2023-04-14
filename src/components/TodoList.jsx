@@ -1,32 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 import { FormGroup, FormControlLabel, Checkbox } from "@mui/material";
+import { Data } from "../Data";
 
 const TodoList = () => {
 
-  const handleChange = (index) => {
-  };
+  const [datas, setDatas] = useState(Data);
 
-  const data = [
-    {
-      task: "Eat",
-      status: false,
-    },
-    {
-      task: "Sleep",
-      status: true,
-    },
-  ];
+  const handleChange = (index) => {
+    const updateDatas = [...datas];
+    updateDatas[index] = {...updateDatas[index], status: !updateDatas[index].status};
+    setDatas(updateDatas);
+  };
 
   return (
     <FormGroup className="Tasks">
-      {data.map((value, index) => {
+      {datas.map((data, index) => {
         return (
-          <FormControlLabel className={`Task ${value.status ? "TaskDone" : ""}`} label={value.task} sx={{ margin: "5px 0"  }} 
-            control={
+          <FormControlLabel className = {`Task ${data.status ? "TaskDone" : ""}`} label = {data.task} sx = {{ margin: "5px 0" }} 
+            control = {
               <Checkbox 
-                checked={value.status}
-                onChange={handleChange(index)}
+                checked = {data.status}
+                onClick = {() => handleChange(index)}
+                name = {data.task}
               />
             }
           />
