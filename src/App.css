@@ -17,10 +17,6 @@ body {
   grid-template-rows: auto auto;
 }
 
-.Info {
-
-}
-
 .Title {
   font-size: 36px;
 }
@@ -65,7 +61,7 @@ body {
 
 .AddTodo {
   display: grid;
-  grid-template-columns: 94% 5%;
+  grid-template-columns: 96% 3%;
   gap: 1%;
 }
 
@@ -76,4 +72,5 @@ body {
   border: 0;
   color: #ffffff;
   font-size: 100%;
+  min-width: 20px;
 }
