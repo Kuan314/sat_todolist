@@ -7,5 +7,9 @@ export const Data = [
   {
     "task": "Sleep",
     "status": true
-  }
+  },
+  {
+    "task": "Code",
+    "status": false
+  },
 ];
