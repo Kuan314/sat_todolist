@@ -1,19 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.css";
 import ProgressBar from "./ProgressBar";
 import TodoList from "./TodoList";
-import { Data } from "../Data";
 
-const Info = () => {
-
-  const [data, setDatas] = useState(Data);
-
-  const handleTaskChange = (index) => {
-    const updateDatas = [...data];
-    updateDatas[index] = {...updateDatas[index], status: !updateDatas[index].status};
-    setDatas(updateDatas);
-    console.log("Task changed");
-  };
+const Info = ({data, handleTaskComplete}) => {
 
   return (
     <>
@@ -28,7 +18,7 @@ const Info = () => {
       </div>
       <div className="TodoList">
         <ProgressBar data={data}/>
-        <TodoList data={data} onTaskChange={handleTaskChange} />
+        <TodoList data={data} onTaskComplete={handleTaskComplete} />
       </div>
     </div>
     </>

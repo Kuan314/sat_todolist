@@ -2,9 +2,9 @@ import React from "react";
 import "../App.css";
 import { FormGroup, FormControlLabel, Checkbox } from "@mui/material";
 
-const TodoList = ({data, onTaskChange}) => {
-  const handleChange = (index) => {
-    onTaskChange(index);
+const TodoList = ({data, onTaskComplete}) => {
+  const handleComplete = (index) => {
+    onTaskComplete(index);
   }
 
   return (
@@ -15,7 +15,7 @@ const TodoList = ({data, onTaskChange}) => {
             control = {
               <Checkbox 
                 checked = {data.status}
-                onClick = {() => handleChange(index)}
+                onClick = {() => handleComplete(index)}
                 name = {data.task}
               />
             }
