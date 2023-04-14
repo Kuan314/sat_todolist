@@ -3,9 +3,9 @@ import "../App.css";
 
 const AddTodo = () => {
   return (
-    <div className="AddTodo">
+    <div>
       <label>Add to list</label>
-      <form>
+      <form className="AddTodo">
         <input className="Input" type="text" />
         <button className="SubmitButton">
           +

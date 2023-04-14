@@ -49,15 +49,19 @@ body {
 }
 
 .AddTodo {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  gap: 1%;
+  grid-template-columns: 94% 5%;
 }
 
 .Input {
-  padding-right: 5%;
 }
 
 .SubmitButton {
-  width: 3em;
-  height: 3em;
+  aspect-ratio: 1 / 1;
+  background-color: #7e93d8;
+  border-radius: 5px;
+  border: 0;
+  color: #ffffff;
+  font-size: 100%;
 }
