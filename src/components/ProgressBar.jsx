@@ -13,8 +13,11 @@ const ProgressBar = ({ data }) => {
   const completePercent = (completeTasks / totalTasks) * 100;
 
   return (
-    <div>
+    <div className="ShowProgress">
       {completePercent}%
+      <div className="ProgressBar">
+        <div className="DoneProgress" style={{ width: `${completePercent}%` }} />
+      </div>
     </div>
   )
 }

@@ -29,13 +29,28 @@ body {
   font-weight: 200;
 }
 
+.ShowProgress {
+  margin: 1% 0;
+  display: grid;
+  grid-template-columns: 5% 94%;
+  gap: 1%;
+}
+
+.ProgressBar {
+  background-color: #ffffff;
+  border-radius: 25px;
+}
+
+.DoneProgress {
+  height: 100%;
+  background-color: #7e93d8;
+  border-radius: 25px;
+}
+
 .TodoList {
   margin: 1% 0;
   border-top: 2px #7e93d8 solid;
   border-bottom: 2px #7e93d8 solid;
-}
-
-.Tasks {
 }
 
 .Task {
@@ -50,11 +65,8 @@ body {
 
 .AddTodo {
   display: grid;
-  gap: 1%;
   grid-template-columns: 94% 5%;
-}
-
-.Input {
+  gap: 1%;
 }
 
 .SubmitButton {
