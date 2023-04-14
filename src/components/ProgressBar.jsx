@@ -10,7 +10,7 @@ const ProgressBar = ({ data }) => {
     setCompleteTasks(completedTasks);
   }, [data]);
 
-  const completePercent = (completeTasks / totalTasks) * 100;
+  const completePercent = Math.floor((completeTasks / totalTasks) * 100);
 
   return (
     <div className="ShowProgress">
