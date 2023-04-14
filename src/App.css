@@ -59,7 +59,7 @@ body {
   text-decoration: line-through;
 }
 
-.AddTodo {
+.AddTodoForm {
   display: grid;
   grid-template-columns: 96% 3%;
   gap: 1%;

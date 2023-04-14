@@ -12,13 +12,23 @@ const App = () => {
     const updateDatas = [...data];
     updateDatas[index] = {...updateDatas[index], status: !updateDatas[index].status};
     setDatas(updateDatas);
-    console.log("Task changed");
   };
+
+  const handleTaskAdd = (task) => {
+    const updateDatas = [...data,];
+    updateDatas.push(
+      {
+        task: task,
+        status: false
+      }
+    )
+    setDatas(updateDatas);
+  }
 
   return (
     <div className="App">
       <Info data={data} handleTaskComplete={handleTaskComplete} />
-      <AddTodo data={data}/>
+      <AddTodo onTaskAdd={handleTaskAdd} />
     </div>
   );
 }
