@@ -3,7 +3,7 @@ import "../App.css";
 import { FormGroup, FormControlLabel, Checkbox, IconButton } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 
-const TodoList = ({data, onTaskComplete, onTaskDelete}) => {
+const TodoList = ({data, onTaskComplete, onTaskDelete, ShowCompletedLast}) => {
   const handleComplete = (index) => {
     onTaskComplete(index);
   }
@@ -20,9 +20,13 @@ const TodoList = ({data, onTaskComplete, onTaskDelete}) => {
     }
   }, [data])
 
+  const showData = ShowCompletedLast 
+    ? [...data].sort((a, b) => a.status - b.status) 
+    : [...data]; 
+
   return (
     <FormGroup className="Tasks" sx={{ flexWrap: "nowrap", overflowY: "scroll" }} ref={containerRef}>
-      {data.map((data, index) => {
+      {showData.map((data, index) => {
         return (
           <>
           <div className={`Task ${data.status ? "TaskDone" : ""}`}>

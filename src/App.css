@@ -66,6 +66,12 @@ body {
   text-decoration: line-through;
 }
 
+.ShowCompletedLastControllerContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20%;
+}
+
 .AddTodoForm {
   display: grid;
   grid-template-columns: 96% 3%;
