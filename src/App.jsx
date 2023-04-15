@@ -8,8 +8,9 @@ const App = () => {
 
   const [data, setData] = useState(Data);
 
+  // 
   const handleTaskAdd = (task) => {
-    const updatedData = [...data,];
+    const updatedData = [...data];
     updatedData.push(
       {
         task: task,
