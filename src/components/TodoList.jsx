@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../App.css";
 import { FormGroup, FormControlLabel, Checkbox, IconButton } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
@@ -12,8 +12,16 @@ const TodoList = ({data, onTaskComplete, onTaskDelete}) => {
     onTaskDelete(index);
   }
 
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if(containerRef.current) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
+  }, [data])
+
   return (
-    <FormGroup className="Tasks" sx={{ flexWrap: "nowrap", overflowY: "scroll" }}>
+    <FormGroup className="Tasks" sx={{ flexWrap: "nowrap", overflowY: "scroll" }} ref={containerRef}>
       {data.map((data, index) => {
         return (
           <>
