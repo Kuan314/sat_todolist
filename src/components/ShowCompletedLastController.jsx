@@ -2,6 +2,7 @@ import React from "react";
 import { Switch } from "@mui/material";
 import { styled } from "@mui/material";
 
+// Styling on showCompletedLast button
 const ShowCompletedLastButton = styled(Switch)(({ theme }) => ({
   width: 28,
   height: 16,

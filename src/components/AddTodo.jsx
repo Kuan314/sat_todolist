@@ -4,13 +4,21 @@ import { Formik, Form, Field } from 'formik';
 import { object, string } from "yup";
 
 const AddTodo = ({onTaskAdd}) => {
+
+  // initial place to save task temporally
   const initialValue = { task: "" };
 
+  /**
+   * The task will pass to App.jsx and save to data
+   * 
+   * @param {string} values.task
+   */
   const handleSubmit = (values, { resetForm }) => {
     onTaskAdd(values.task);
     resetForm();
   }
 
+  // Check if the task is not null and start with space
   const validationTask = object({
     task: string().nonNullable().trim().required("Must input task"),
   });

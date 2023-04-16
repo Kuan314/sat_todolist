@@ -4,15 +4,28 @@ import ProgressBar from "./ProgressBar";
 import TodoList from "./TodoList";
 import ShowCompletedLastController from "./ShowCompletedLastController";
 
+/**
+ * Return these components
+ * ProgressBar - Show how much percent of things done
+ * TodoList - Show the tasks
+ * ShowCompletedLastController - Will sort the done task to bottom when on
+ * 
+ * @param {Object[]} data
+ * @param {string} data.task
+ * @param {boolean} data.status
+ */
 const Info = ({ data, handleTaskComplete, handleTaskDelete }) => {
+
+  // Save the status of showCompletedLast button
   const [showCompletedLast, setShowCompleteLast] = useState(false);
   
+  // After clicked button
+  // Set showCompleteLast to opposite state
   const handleShowCompletedLast = () => {
     setShowCompleteLast(!showCompletedLast);
   };
 
   return (
-    <>
     <div className="Info">
       <div className="Header">
         <div className="Title">
@@ -28,7 +41,6 @@ const Info = ({ data, handleTaskComplete, handleTaskDelete }) => {
       </div>
       <ShowCompletedLastController showCompletedLast={showCompletedLast} handleShowCompletedLast={handleShowCompletedLast}/>
     </div>
-    </>
   )
 }
 

@@ -25,6 +25,7 @@ body {
   font-weight: 200;
 }
 
+/* Style of Progress Bar */
 .ShowProgress {
   margin: 2% 0;
   display: flex;
@@ -43,6 +44,7 @@ body {
   border-radius: 25px;
 }
 
+/* Style of Todo List */
 .TodoList {
   margin: 1% 0;
   border-top: 2px #7e93d8 solid;
@@ -66,12 +68,14 @@ body {
   text-decoration: line-through;
 }
 
+/* Style of ShowCompletedLast Button */
 .ShowCompletedLastControllerContainer {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20%;
 }
 
+/* Style of add task form */
 .AddTodoForm {
   display: grid;
   grid-template-columns: 96% 3%;
