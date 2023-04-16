@@ -1,9 +1,13 @@
 # This is a Todo List which is done for SAT interview
 
-## Done Functions
+## What I have used
+- React
+- Material UI
+- Formik, Yup
 
-## Working on it
+## Done Functions
 - Add Todo
+  - Checking the validation of input
 - Delete Todo
 - Show progress bar
 - Rearrange Done to bottom
@@ -12,4 +16,3 @@
 
 1. Clone it to your desktop
 2. use `npm start`
-
