@@ -1,29 +1,25 @@
 import React from "react";
 import "../App.css";
 import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
+import { object, string } from "yup";
 
 const AddTodo = ({onTaskAdd}) => {
   const initialValue = { task: "" };
-
-  // const handleChange = (e) => {
-  //   setTask(e.target.value);
-  // }
 
   const handleSubmit = (values, { resetForm }) => {
     onTaskAdd(values.task);
     resetForm();
   }
 
-  const validationSchema = Yup.object({
-    task: Yup.string().required('Must input task'),
+  const validationTask = object({
+    task: string().nonNullable().trim().required("Must input task"),
   });
 
   return (
     <div>
       <label>Add to list</label>
-      <Formik initialValues={initialValue} onSubmit={handleSubmit} validationSchema={validationSchema}>
-        {({ touched, errors }) => (
+      <Formik initialValues={initialValue} onSubmit={handleSubmit} validationSchema={validationTask} >
+        {() => (
           <Form>
             <div className="AddTodoForm">
               <Field type="text" id="task" name="task" />
