@@ -9,6 +9,10 @@ const App = () => {
   // All sample data saved in here
   const [data, setData] = useState(Data);
 
+  // Check the task is adding
+  // If true, todo list will scroll to last
+  const [checkAddingTask, setCheckAddingTask] = useState(false);
+
   // Adding new task
   const handleTaskAdd = (task) => {
     const updatedData = [...data];
@@ -19,6 +23,7 @@ const App = () => {
       }
     )
     setData(updatedData);
+    setCheckAddingTask(true);
   }
 
   // Mark selected task to complete
@@ -37,7 +42,13 @@ const App = () => {
 
   return (
     <div className="App">
-      <Info data={data} handleTaskComplete={handleTaskComplete} handleTaskDelete={handleTaskDelete} />
+      <Info 
+        data={data} 
+        handleTaskComplete={handleTaskComplete} 
+        handleTaskDelete={handleTaskDelete} 
+        checkAddingTask={checkAddingTask} 
+        setCheckAddingTask={setCheckAddingTask}  
+      />
       <AddTodo onTaskAdd={handleTaskAdd} />
     </div>
   );

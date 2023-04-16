@@ -14,7 +14,7 @@ import ShowCompletedLastController from "./ShowCompletedLastController";
  * @param {string} data.task
  * @param {boolean} data.status
  */
-const Info = ({ data, handleTaskComplete, handleTaskDelete }) => {
+const Info = ({ data, handleTaskComplete, handleTaskDelete, checkAddingTask, setCheckAddingTask }) => {
 
   // Save the status of showCompletedLast button
   const [showCompletedLast, setShowCompleteLast] = useState(false);
@@ -37,7 +37,14 @@ const Info = ({ data, handleTaskComplete, handleTaskDelete }) => {
       </div>
       <div className="TodoList">
         <ProgressBar data={data}/>
-        <TodoList data={data} onTaskComplete={handleTaskComplete} onTaskDelete={handleTaskDelete} ShowCompletedLast={showCompletedLast}/>
+        <TodoList 
+          data={data} 
+          onTaskComplete={handleTaskComplete} 
+          onTaskDelete={handleTaskDelete} 
+          ShowCompletedLast={showCompletedLast} 
+          checkAddingTask={checkAddingTask}
+          setCheckAddingTask={setCheckAddingTask}
+        />
       </div>
       <ShowCompletedLastController showCompletedLast={showCompletedLast} handleShowCompletedLast={handleShowCompletedLast}/>
     </div>

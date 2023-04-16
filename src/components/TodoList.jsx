@@ -10,7 +10,7 @@ import CloseIcon from '@mui/icons-material/Close';
  * @param {string} data.task
  * @param {boolean} data.status
  */
-const TodoList = ({data, onTaskComplete, onTaskDelete, ShowCompletedLast}) => {
+const TodoList = ({ data, onTaskComplete, onTaskDelete, ShowCompletedLast, checkAddingTask, setCheckAddingTask }) => {
   
   // Past index of completed task
   const handleComplete = (index) => {
@@ -22,22 +22,23 @@ const TodoList = ({data, onTaskComplete, onTaskDelete, ShowCompletedLast}) => {
     onTaskDelete(index);
   }
 
-  const containerRef = useRef(null);
-
-  // Scroll to added task
-  useEffect(() => {
-    if(containerRef.current) {
-      containerRef.current.scrollTop = containerRef.current.scrollHeight;
-    }
-  }, [data])
-
   // Show sorted data or default data
   const showData = ShowCompletedLast 
     ? [...data].sort((a, b) => a.status - b.status) 
     : [...data]; 
 
+  // Scroll to added task
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if(containerRef.current && checkAddingTask) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+      setCheckAddingTask(false);
+    }
+  }, [data, checkAddingTask, setCheckAddingTask])
+
   return (
-    <FormGroup className="Tasks" sx={{ flexWrap: "nowrap", overflowY: "scroll" }} ref={containerRef}>
+    <FormGroup className="Tasks" sx={{ flexWrap: "nowrap", overflowY: "scroll" }} ref={containerRef} >
       {showData.map((data, index) => {
         return (
           <>
